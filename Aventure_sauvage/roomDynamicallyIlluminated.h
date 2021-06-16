@@ -4,7 +4,7 @@ using namespace std;
 
 class RoomMaybeLight:public Room {
 public:
-	RoomMaybeLight(string name, string description, bool illumination) :Room(name, description) { this->illumination = illumination; }
+	RoomMaybeLight(string name, string description, bool illumination) :Room(name, description) { this->illuminationState = illumination; }
 
 	bool getIllumination();
 	void toggleIllumination();
@@ -14,5 +14,5 @@ public:
 	vector <ObjectSimple*>getObjects() override;
 
 private:
-	bool illumination;
+	bool illuminationState;
 };

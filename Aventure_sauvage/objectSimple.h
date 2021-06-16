@@ -18,9 +18,8 @@ public:
     string getName();
     string getDescription();
     virtual string getUse();
-    //virtual string getUse(Room* room) {}
     virtual objectType getType();
-    virtual void useObject(Room* room) {}
+    virtual void useObject(Room* room) {}//doesn't affect anything when used
 
 
 private:

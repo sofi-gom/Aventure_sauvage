@@ -9,24 +9,24 @@
 using namespace std;
 
 Map::Map() {
-    printf("\033[93m***Fun Game***\n\n");
+    printf("\033[93m>>>WILD ADVENTURE<<<\n\n");
+    
+    ///objets in the souvenir shop
+    shop->objects.push_back(make_unique<ObjectSimple>("A piano", "The piano has a lot of keys", "You are playing a song on the piano"));
+    shop->objects.push_back(make_unique <ObjectSimple>("A pencil", "The pencil has a broken tip", "You are writing a poem with the pencil"));
+    shop->objects.push_back(make_unique <ObjectLightControl>("A switch", "The switch can turn ON/OFF the light", "the light "));
+
+    //objets in the desert animal area
+    desertAnimals->objects.push_back(make_unique<ObjectUnlock>("A key to open the cactus zone", "The key is golden", "The key", restrictedCactusZone));
+    desertAnimals->objects.push_back(make_unique<ObjectSimple>("A bottle of water", "The bottle of water is not open", "te tomas el agua de la botella"));
+   //objects at the entrance
+    entrance->objects.push_back(make_unique<ObjectLightControl>("A switch", "The switch can turn ON/OFF the light", "the light"));
+    //objects in the forest animal section
+    forestAnimals->objects.push_back(make_unique<ObjectUnlock>("A key to open the lion feeding area.", "The key is golden", "The key ", restrictedLionFeedingZone));
+
+    //connexions between the rooms
     entrance->W = shop;
     entrance->N = desertAnimals;
-
-    ///objetos de la tiendita
-    shop->objects.push_back(make_unique<ObjectSimple>("un piano", "el piano tiene muchas teclas", "estas tocando una cancion en el piano"));
-    shop->objects.push_back(make_unique <ObjectSimple>("un lapiz", "el lapiz tiene la punta rota", "estas escribiendo palabras con el lapiz"));
-    shop->objects.push_back(make_unique <ObjectLightControl>("un switch", "el switch va a prender la luz", "la luz "));
-
-    //objetos de  animales del desierto
-    desertAnimals->objects.push_back(make_unique<ObjectUnlock>("una llave  de los cactus", "la llave es dorada", "la llave abre la puerta de la zona escondida de cactus", restrictedCactusZone));
-    desertAnimals->objects.push_back(make_unique<ObjectSimple>("una botella de agua", "la botella de agua no esta abierta", "te tomas el agua de la botella"));
-    desertAnimals->objects.push_back(make_unique<ObjectLightControl>("un switch", "el switch va a prender la luz", "la luz "));
-   //objetos de la entrada
-    entrance->objects.push_back(make_unique<ObjectLightControl>("un switch", "el switch va a prender o apagar la luz", "la luz "));
-
-
-
     shop->E = entrance;
     desertAnimals->S = entrance;
     desertAnimals->E = forestAnimals;
@@ -37,9 +37,14 @@ Map::Map() {
     shop->N = restrictedCactusZone;
     restrictedCactusZone->E = desertAnimals;
     restrictedCactusZone->S = shop;
+    restrictedLionFeedingZone->S = forestAnimals;
+    restrictedLionFeedingZone->W = tropicalAnimals;
+    forestAnimals->N = restrictedLionFeedingZone;
+    tropicalAnimals->E = restrictedLionFeedingZone;
     currentRoom = entrance;
+    
 }
-
+//move to another room
 void Map::nextRoom() {
     
     Print print;
@@ -50,7 +55,7 @@ void Map::nextRoom() {
     print.printAdjacentRooms(currentRoom);
     Room* moveFromRoom;
     do {
-        moveFromRoom = interaction.showDoors(currentRoom);
+        moveFromRoom = interaction.showGameResponse(currentRoom);
         cout << endl;
     } while (moveFromRoom == NULL);
     currentRoom = moveFromRoom;

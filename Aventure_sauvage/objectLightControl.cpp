@@ -5,21 +5,20 @@ objectType ObjectLightControl::getType() {
 	return illuminationType;
 }
 
-bool ObjectLightControl::getIluminationObject() {
-	return iluminationObject;
+bool ObjectLightControl::getIluminationObjectState() {
+	return iluminationObjectState;
 }
 
-//cambio
 void ObjectLightControl::useObject(Room* room) {
 	room->toggleIllumination();
-	iluminationObject = !iluminationObject;
+	iluminationObjectState = !iluminationObjectState;
 }
 
 string ObjectLightControl::getUse() {
-	if (iluminationObject) {
-		return "se prendio " + ObjectSimple::getUse();
+	if (iluminationObjectState) {
+		return ObjectSimple::getUse()+ "turned ON ";
 	}
 	else {
-		return "se apago " + ObjectSimple::getUse();
+		return ObjectSimple::getUse()+ "turned OFF ";
 	}
 }

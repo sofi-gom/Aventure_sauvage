@@ -1,5 +1,6 @@
 #include "interaction.h"
 
+//Shows if there is a room in the direction the user wants to go
 Room* Interaction::validDirection(string word, string  letter, Room* room) {
     if ((userInput.compare(letter) == 0 || userInput.compare(word) == 0)) {
         if (room == NULL) {
@@ -20,7 +21,7 @@ Room* Interaction::validDirection(string word, string  letter, Room* room) {
 }
 
 
-Room* Interaction::showDoors(Room* room) {
+Room* Interaction::showGameResponse(Room* room) {
     //lowercase input
     getline(cin, userInput);
     for_each(userInput.begin(), userInput.end(), [](char& c) {
@@ -67,11 +68,11 @@ Room* Interaction::showDoors(Room* room) {
         }
         else {
             eraseSubstring(userInput, "look ");
-            cout << "buscar objeto " << userInput << endl;
+            cout << "Look for object " << userInput << endl;
 
             int objectIndex = room->getObjectIndex(userInput);
             if (objectIndex == -1) {
-                cout << "objeto no encontrado" << endl;
+                cout << "Object not found." << endl;
             }
             else {
                 cout << room->objects[objectIndex]->getDescription() << endl;
@@ -86,7 +87,7 @@ Room* Interaction::showDoors(Room* room) {
 }
 
 void Interaction::eraseSubstring(std::string& myString, const std::string& eraseThis)
-{//Function from StackOverflow
+{
     // Search if what I want to erase is in the string
     size_t pos = myString.find(eraseThis);
     if (pos != std::string::npos)

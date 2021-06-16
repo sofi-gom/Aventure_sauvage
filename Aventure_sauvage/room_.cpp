@@ -28,6 +28,7 @@ string Room::getDescription() {
     return description;
 }
 
+
 vector<ObjectSimple*> Room::getObjects() {
     vector<ObjectSimple*> listObjects;
     for (int i = 0; i < objects.size(); i++) {
@@ -35,9 +36,6 @@ vector<ObjectSimple*> Room::getObjects() {
         listObjects.push_back(oneObject);
     }
     return listObjects;
-    //vector[i].get
-    //construire vecteur 
-    //return objects;
 }
 
 

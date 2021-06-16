@@ -5,8 +5,8 @@
 
 class Interaction {
 public:
-    Room* showDoors(Room* room);
-
+    Room* showGameResponse(Room* room);
+    
 private:
     string userInput;
     void eraseSubstring(std::string& mystring, const std::string& toErase);

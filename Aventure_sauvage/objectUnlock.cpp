@@ -11,3 +11,12 @@ bool ObjectUnlock::getRestrictedZoneOpener() {
 void ObjectUnlock::useObject(Room* room) {
 	openHiddenZone->toggleLocked();
 }
+
+string ObjectUnlock::getUse() {
+	if (openHiddenZone->getLocked()) {
+		return ObjectSimple::getUse() + " opened the " + openHiddenZone->getName() + "!";
+	}
+	else {
+		return ObjectSimple::getUse() + " closed the " + openHiddenZone->getName() + "!";
+	}
+}

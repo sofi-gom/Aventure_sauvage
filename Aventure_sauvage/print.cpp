@@ -9,9 +9,13 @@ void Print::printDescription(Room* room) {
 }
 
 void Print::printObjects(Room* room) {
-    cout << "\nObject list: " << endl;
-    for (int i = 0; i < room->getObjects().size(); i++) cout << " " << room->getObjects()[i]->getName() << " " << room->getObjects()[i]->getType() << endl;
-    cout << "To use an object write 'use' and the name of the object you want to use. " << endl;
+    if (room->getObjects().size() > 0) {
+        cout << "\nObject list: " << endl;
+        for (int i = 0; i < room->getObjects().size(); i++) cout << " " << room->getObjects()[i]->getName() << endl; // to get the object type room->getObjects()[i]->getType()
+        cout << "To use an object write 'use' and the name of the object you want to use. " << endl;
+    }
+    else cout << "There are no objects in this room." << endl;
+    
 }
 
 void Print::printAdjacentRooms(Room* room) {

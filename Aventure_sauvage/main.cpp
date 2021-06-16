@@ -6,7 +6,7 @@ using namespace std;
 
 
 int main() {
-
+    //creates the map
     Map map = Map();
      
     while (true) {

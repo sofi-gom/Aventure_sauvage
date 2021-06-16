@@ -13,8 +13,8 @@
 #define NORTH_LETTER "n"
 #define EAST_WORD "este"
 #define EAST_LETTER "e"
-#define WEST_WORD "oeste"
-#define WEST_LETTER "o"
+#define WEST_WORD "west"
+#define WEST_LETTER "w"
 #define USE "use"
 
 
