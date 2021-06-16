@@ -1,4 +1,5 @@
 ---------DESCRIPTION OF THE GAME:-----------------
+
 This is the map of a zoo. The zoo has normal rooms, rooms that can change their lighting and rooms that can be opened or closed. Each room can have a different list of objects. An " illumination object " can change the lighting of a room with dynamic lighting, an "object unlock" can unlock (or lock) a room to enter a restricted area. The user can move around the map by choosing to move North, South, East, or West. The option " look " can show you at all times which room you are in. In you write "look" followed by the name of an object found in the room, you will get its description. To use the object you have to write "use" plus the name of the object. 
 
 ---------DESCRIPTION OF THE CLASSES:-----------------
