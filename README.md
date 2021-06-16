@@ -12,7 +12,7 @@ Interaction: It contains the response of the game to the commands of the user. I
 
 Print: No cout is made on the class itself, they are mostly managed by a class Print. Here you can find the methods to print a list of objects, the adjacent rooms to a room and other room information including the name and description.
 
-objectLightControl: This object can affect the state of a room with dynamic lighting. Usually using a switch, we can know if it is in the ON/OFF position by using its attribute: illuminationObjectState.
+objectLightControl: This object can affect the state of a room with dynamic lighting. Usually using a switch, we can know if it is in the ON/OFF position by using its attribute: illuminationObjectState. It affects the room it is located in.
 
 ObjectSimple: This object will inherit to objectLightControl and Object Unlock. It has a name and a description. We use the properties of polymorphism to redefine methods such as UseObject().
 
