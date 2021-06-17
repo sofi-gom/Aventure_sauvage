@@ -18,7 +18,7 @@ private:
     Room* forestAnimals = new Room("Forest animal area", "Here you can find trees and a lake.");
     Room* tropicalAnimals = new Room("Tropical animal area", "Here you can find monkeys. ");
     Room* restrictedCactusZone = new RoomLocked("Restricted cactus zone", "Here you can find cactus. ", true);
-    Room* restrictedLionFeedingZone = new Room("Restricted lion feeding zone", "Here you can find lions. ");
+    Room* restrictedLionFeedingZone = new RoomLocked("Restricted lion feeding zone", "Here you can find lions. ",true);
     Room* currentRoom;
 };
 

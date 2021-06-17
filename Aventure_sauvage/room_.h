@@ -7,11 +7,11 @@
 
 #include <vector>
 
-#define SOUTH_WORD "sur"
+#define SOUTH_WORD "south"
 #define SOUTH_LETTER "s"
-#define NORTH_WORD "norte"
+#define NORTH_WORD "north"
 #define NORTH_LETTER "n"
-#define EAST_WORD "este"
+#define EAST_WORD "east"
 #define EAST_LETTER "e"
 #define WEST_WORD "west"
 #define WEST_LETTER "w"
