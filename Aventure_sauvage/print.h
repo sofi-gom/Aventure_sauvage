@@ -7,9 +7,9 @@ class Room;
 
 class Print {
 public:
-    void printName(Room* room);
-    void printDescription(Room* room);
-    void printAdjacentRooms(Room* room);
-    void printObjects(Room* room);
+    void printName(Room* &room) const;
+    void printDescription(Room* &room) const;
+    void printAdjacentRooms(Room* &room) const;
+    void printObjects(Room* &room) const;
 };
 

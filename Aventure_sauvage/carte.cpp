@@ -8,7 +8,7 @@
 
 using namespace std;
 
-Map::Map() {
+Map::Map(){
     printf("\033[93m>>>WILD ADVENTURE<<<\n\n");
     
     ///objets in the souvenir shop
@@ -20,7 +20,7 @@ Map::Map() {
     desertAnimals->objects.push_back(make_unique<ObjectUnlock>("A key to open the cactus zone", "The key is golden", "The key", restrictedCactusZone));
     desertAnimals->objects.push_back(make_unique<ObjectSimple>("A bottle of water", "The bottle of water is not open", "te tomas el agua de la botella"));
    //objects at the entrance
-    entrance->objects.push_back(make_unique<ObjectLightControl>("A switch", "The switch can turn ON/OFF the light", "the light"));
+    entrance->objects.push_back(make_unique<ObjectLightControl>("A switch", "The switch can turn ON/OFF the light", "the light "));
     //objects in the forest animal section
     forestAnimals->objects.push_back(make_unique<ObjectUnlock>("A key to open the lion feeding area.", "The key is golden", "The key ", restrictedLionFeedingZone));
 
@@ -45,7 +45,7 @@ Map::Map() {
     
 }
 //move to another room
-void Map::nextRoom() {
+void Map::nextRoom(){
     
     Print print;
     Interaction interaction;

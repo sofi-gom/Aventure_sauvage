@@ -7,9 +7,9 @@ class ObjectLightControl : public ObjectSimple {
 public:
 	ObjectLightControl(string name, string description, string use) :ObjectSimple(name, description, use) {}//Suggestion: add pointer attribute
 
-	bool getIluminationObjectState();
+	bool getIluminationObjectState() const;
 	objectType getType()override;
-	void useObject(Room* room) override;
+	void useObject(Room* &room) override;
 	string getUse()override;
 private:
 	bool iluminationObjectState;

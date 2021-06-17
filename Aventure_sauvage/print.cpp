@@ -1,14 +1,14 @@
 #include "print.h"
 
-void Print::printName(Room* room) {
+void Print::printName(Room* &room) const{
     cout << "-----" << room->getName() << "-----" << "\n";
 }
 
-void Print::printDescription(Room* room) {
+void Print::printDescription(Room* &room) const{
     cout << room->getDescription() << "\n";
 }
 
-void Print::printObjects(Room* room) {
+void Print::printObjects(Room* &room) const{
     if (room->getObjects().size() > 0) {
         cout << "\nObject list: " << endl;
         for (int i = 0; i < room->getObjects().size(); i++) cout << " " << room->getObjects()[i]->getName() << endl; // to get the object type room->getObjects()[i]->getType()
@@ -18,7 +18,7 @@ void Print::printObjects(Room* room) {
     
 }
 
-void Print::printAdjacentRooms(Room* room) {
+void Print::printAdjacentRooms(Room* &room) const{
     cout << "\nThese are the surrounding rooms: \n";
     if (room->N != NULL) {
         if (!room->N->getLocked())cout << room->N->getName() << " [" << NORTH_LETTER << "]\n";

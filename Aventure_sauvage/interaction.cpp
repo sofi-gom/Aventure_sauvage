@@ -1,7 +1,7 @@
 #include "interaction.h"
 
 //Shows if there is a room in the direction the user wants to go
-Room* Interaction::validDirection(string word, string  letter, Room* room) {
+Room* Interaction::validDirection(string word, string  letter, Room*& room) {
     if ((userInput.compare(letter) == 0 || userInput.compare(word) == 0)) {
         if (room == NULL) {
             cout << "Sorry! No rooms in that direction.\n";
@@ -21,7 +21,7 @@ Room* Interaction::validDirection(string word, string  letter, Room* room) {
 }
 
 
-Room* Interaction::showGameResponse(Room* room) {
+Room* Interaction::showGameResponse(Room* &room) {
     //lowercase input
     getline(cin, userInput);
     for_each(userInput.begin(), userInput.end(), [](char& c) {

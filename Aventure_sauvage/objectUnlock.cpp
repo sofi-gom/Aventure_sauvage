@@ -4,11 +4,11 @@ objectType ObjectUnlock::getType() {
 	return unlockType;
 }
 
-bool ObjectUnlock::getRestrictedZoneOpener() {
+bool ObjectUnlock::getRestrictedZoneOpener() const{
 	return openHiddenZone;
 }
 
-void ObjectUnlock::useObject(Room* room) {
+void ObjectUnlock::useObject(Room* &room) {
 	openHiddenZone->toggleLocked();
 }
 

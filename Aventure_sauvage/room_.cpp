@@ -18,7 +18,7 @@ Room::Room(string name, string description) {
 }
 
 
-string Room::getName() {
+string Room::getName() const{
     return name;
 }
 

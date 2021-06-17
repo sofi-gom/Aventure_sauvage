@@ -34,7 +34,7 @@ public:
     Room* S;
     Room* W;
 
-    string getName();
+    string getName() const;
     virtual string getDescription();
     virtual vector<ObjectSimple*> getObjects();
     virtual void toggleIllumination();

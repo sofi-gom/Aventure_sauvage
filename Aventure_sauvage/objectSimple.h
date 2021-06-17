@@ -15,11 +15,11 @@ public:
 
     ObjectSimple(string name, string description, string use);
 
-    string getName();
-    string getDescription();
+    string getName() const;
+    string getDescription() const;
     virtual string getUse();
     virtual objectType getType();
-    virtual void useObject(Room* room) {}//doesn't affect anything when used
+    virtual void useObject(Room* &room) {}//doesn't affect anything when used
 
 
 private:

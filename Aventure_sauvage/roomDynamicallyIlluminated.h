@@ -6,7 +6,7 @@ class RoomMaybeLight:public Room {
 public:
 	RoomMaybeLight(string name, string description, bool illumination) :Room(name, description) { this->illuminationState = illumination; }
 
-	bool getIllumination();
+	bool getIllumination() const;
 	void toggleIllumination();
 	roomType getType()override;
 	int  getObjectIndex(string objectName)override;

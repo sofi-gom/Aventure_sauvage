@@ -7,9 +7,9 @@ class ObjectUnlock :public ObjectSimple {
 public:
 	ObjectUnlock(string name, string description, string use, Room* openHiddenZone) :ObjectSimple(name, description, use) { this->openHiddenZone = openHiddenZone; }
 
-	bool getRestrictedZoneOpener();
+	bool getRestrictedZoneOpener()const;
 	objectType getType()override;
-	void useObject(Room* room)override; 
+	void useObject(Room* &room)override; 
 	string getUse()override;
 private:
 	Room* openHiddenZone;

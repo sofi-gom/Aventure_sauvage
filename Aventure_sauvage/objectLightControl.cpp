@@ -5,11 +5,11 @@ objectType ObjectLightControl::getType() {
 	return illuminationType;
 }
 
-bool ObjectLightControl::getIluminationObjectState() {
+bool ObjectLightControl::getIluminationObjectState() const{
 	return iluminationObjectState;
 }
 
-void ObjectLightControl::useObject(Room* room) {
+void ObjectLightControl::useObject(Room* &room) {
 	room->toggleIllumination();
 	iluminationObjectState = !iluminationObjectState;
 }

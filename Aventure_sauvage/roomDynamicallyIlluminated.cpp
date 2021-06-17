@@ -8,7 +8,7 @@ void RoomMaybeLight::toggleIllumination() {
 	illuminationState = !illuminationState;
 }
 
-bool RoomMaybeLight::getIllumination() {
+bool RoomMaybeLight::getIllumination() const{
 	return illuminationState;
 }
 //For rooms with dynamic lighting on change the description based on its state

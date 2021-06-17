@@ -7,7 +7,7 @@ ObjectSimple::ObjectSimple(string name, string description, string use) {
     this->use = use;
 }
 
-string ObjectSimple::getName() {
+string ObjectSimple::getName() const{
     return name;
 }
 
@@ -15,7 +15,7 @@ objectType ObjectSimple::getType() {
     return simpleType;
 }
 
-string ObjectSimple::getDescription() {
+string ObjectSimple::getDescription() const{
     return description;
 }
 
