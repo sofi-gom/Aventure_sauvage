@@ -1,3 +1,10 @@
+---------DESCRIPTION OF THE GAME:-----------------
+
+This is the map of a zoo. The zoo has normal rooms, rooms that can change their lighting and rooms that can be opened or closed. Each room can have a different list of objects. An " illumination object " can change the lighting of a room with dynamic lighting, an "object unlock" can unlock (or lock) a room to enter a restricted area. The restricted rooms are not shown in the options of rooms you can go to, until you unlock it.
+
+The user can move around the map by choosing to move North, South, East, or West. The option " look " can show you at all times which room you are in. In you write "look" followed by the name of an object found in the room, you will get its description. To use the object you have to write "use" plus the name of the object. 
+
+---------DESCRIPTION OF THE CLASSES:-----------------
 
 Carte: Describes the map of the game. It contains all the rooms and its connections. It contains a function to move from one room to another. 
 
@@ -5,7 +12,7 @@ Interaction: It contains the response of the game to the commands of the user. I
 
 Print: No cout is made on the class itself, they are mostly managed by a class Print. Here you can find the methods to print a list of objects, the adjacent rooms to a room and other room information including the name and description.
 
-objectLightControl: This object can affect the state of a room with dynamic lighting. Usually using a switch, we can know if it is in the ON/OFF position by using its attribute: illuminationObjectState.
+objectLightControl: This object can affect the state of a room with dynamic lighting. Usually using a switch, we can know if it is in the ON/OFF position by using its attribute: illuminationObjectState. It affects the room it is located in.
 
 ObjectSimple: This object will inherit to objectLightControl and Object Unlock. It has a name and a description. We use the properties of polymorphism to redefine methods such as UseObject().
 
